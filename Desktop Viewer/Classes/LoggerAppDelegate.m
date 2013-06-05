@@ -245,7 +245,6 @@ NSString * const kPref_ApplicationFilterSet = @"appFilterSet";
 											   object:nil];
 	// Prepare the logger status
 	statusController = [[LoggerStatusWindowController alloc] initWithWindowNibName:@"LoggerStatus"];
-	[statusController showWindow:self];
 
 	/* initialize all supported transports */
 	
@@ -360,6 +359,13 @@ NSString * const kPref_ApplicationFilterSet = @"appFilterSet";
 	if (prefsController == nil)
 		prefsController = [[LoggerPrefsWindowController alloc] initWithWindowNibName:@"LoggerPrefs"];
 	[prefsController showWindow:sender];
+}
+
+- (IBAction)showLoggerStatus:(id)sender {
+  if (statusController == nil) {
+    statusController = [[LoggerStatusWindowController alloc] initWithWindowNibName:@"LoggerStatus"];
+  }
+  [statusController showWindow:self];
 }
 
 - (void)relaunchApplication

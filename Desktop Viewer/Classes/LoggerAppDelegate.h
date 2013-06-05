@@ -60,6 +60,7 @@
 - (void)saveFiltersDefinition;
 
 - (IBAction)showPreferences:(id)sender;
+- (IBAction)showLoggerStatus:(id)sender;
 
 - (BOOL)loadEncryptionCertificate:(NSError **)outError;
 
